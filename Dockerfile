@@ -6,8 +6,6 @@ RUN caddy fmt --overwrite Caddyfile
 
 FROM listmonk/listmonk:latest
 
-ENV LISTMONK_app__address="0.0.0.0:${PORT}"
-
 RUN apk add --no-cache parallel openssl
 
 COPY --from=caddy /srv/Caddyfile ./
