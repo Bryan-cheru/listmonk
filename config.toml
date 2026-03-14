@@ -1,13 +1,8 @@
 [app]
 address = "0.0.0.0:9000"
-admin_username = "admin"
-# Run: docker run --rm listmonk/listmonk:latest ./listmonk --idempotent --config ""
-# to generate a bcrypt hash for your password, or use the default below (password: admin123)
-# Change this before going to production!
-admin_password = "admin123"
 
 [db]
-host = "db"
+host = "localhost"
 port = 5432
 user = "listmonk"
 password = "listmonk"

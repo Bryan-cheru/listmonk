@@ -1,7 +1,8 @@
 FROM listmonk/listmonk:latest
 
-# Railway provides $PORT dynamically — use a shell script to pass it in
-COPY --chmod=755 railway-start.sh ./
+# Bake in config with 0.0.0.0 — env vars override DB connection at runtime
+COPY --chmod=644 config.toml ./config.toml
+COPY --chmod=755 railway-start.sh ./railway-start.sh
 
 ENTRYPOINT ["/bin/sh"]
-CMD ["railway-start.sh"]
+CMD ["./railway-start.sh"]
